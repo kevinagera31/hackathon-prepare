@@ -1,0 +1,29 @@
+import pygame
+import time
+import sys
+pygame.init() #initialise given pygame modules
+is_init=pygame.get_init()#True if all modules are initialised
+print(is_init)
+a=pygame.display.set_mode((400,500),pygame.RESIZABLE)#creates pygame window but doesnt close it as no user case is taken resizable enables user to resize window
+pygame.display.set_caption("meep")#name of the pygame window
+colour=(255,255,0)
+a.fill(colour)#fills colour
+pygame.display.flip()#updates pygame screen
+
+
+pygame.draw.rect(a,colour,pygame.Rect(30,30,60,60))
+pygame.display.flip()
+pygame.time.wait(5000)
+
+
+running=True#boolean value to check if game is still running
+while running:#keep game running as longas condition is true
+    for event in pygame.event.get():#check event
+        if event.type==pygame.QUIT:#if event is of type quit then bool is set to false
+            running=False
+
+#x,y=a.get_size()#gets size given as a stores width and height of pygame window
+#pygame.display.quit()
+#print(x,y)#prints width and height of pygame window
+
+
